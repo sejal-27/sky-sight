@@ -1,9 +1,17 @@
 import React from "react";
+// import Weather from "./components/weather";
+import Topbar from "./components/topbar";
+// import SearchBar from "./components/SearchBar/searchBar";
 
 const App = () => {
   return (
     <>
-      <div className=" m-4 underline ">hiiiii</div>
+      {/* <Weather /> */}
+   
+      {/* <SearchBar />
+      */}
+
+      <Topbar />
     </>
   );
 };
