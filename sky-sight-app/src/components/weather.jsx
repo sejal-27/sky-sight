@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
@@ -35,7 +35,7 @@ const Weather = () => {
           <div className=""> Humidity:{weather.main.humidity}</div>
           <div className=""> Visibility:{weather.visibility} mtr</div>
           <div className=""> Wind:{weather.wind.speed} m/s</div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} transition={{duration:0.5 , delay:0.5}}>
+          {/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} transition={{duration:0.5 , delay:0.5}}>
             I have some content in here
           </motion.div>
           <AnimatePresence>
@@ -45,7 +45,7 @@ const Weather = () => {
           </AnimatePresence>
 <motion.div whileHover={{height:"4em", width:"5em", backgroundColor:"wheat"}} style={{height:"2em", width:"2em", backgroundColor:"red"}}>
 hi
-</motion.div>
+</motion.div> */}
 
         </div>
       )}
