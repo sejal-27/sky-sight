@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import WeatherData from "./WeatherData/WeatherData";
 // import { motion, AnimatePresence } from "framer-motion";
 
 const Weather = ({ cityName }) => {
@@ -29,26 +30,42 @@ const Weather = ({ cityName }) => {
   return (
     <div>
       {error && <p>{error}</p>}
-      {weather && (
-        <div className="">
-          <div className="location">{weather.name}</div>
-          <div className=""> Temperature: {weather.main.temp}°C</div>
-          <div className="">
-            {" "}
-            feels like Temperature: {weather.main.feels_like}°C
-          </div>
-          <div className=""> Condition: {weather.weather[0].description}</div>
-          <div className=""> Humidity:{weather.main.humidity}</div>
-          <div className=""> Visibility:{weather.visibility} mtr</div>
-          <div className=""> Wind:{weather.wind.speed} m/s</div>
-          <div>
-            Icon:
-            <img
-              src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-              alt="Weather Icon"
-            />
-          </div>
-          {/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} transition={{duration:0.5 , delay:0.5}}>
+      {weather &&(
+        <WeatherData
+          name={weather.name}
+          temp={weather.main.temp}
+          icon={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+          description={weather.weather[0].description}
+        />
+  
+        // <div className="">
+        //   <div className="location"></div>
+        //   <div className=""> Temperature: {weather.main.temp}°C</div>
+        //   <div className="">
+        //     {" "}
+        //     feels like Temperature: {weather.main.feels_like}°C
+        //   </div>
+        //   <div className=""> Condition: {weather.weather[0].description}</div>
+        //   <div className=""> Humidity:{weather.main.humidity}</div>
+        //   <div className=""> Visibility:{weather.visibility} mtr</div>
+        //   <div className=""> Wind:{weather.wind.speed} m/s</div>
+        //   <div>
+        //     Icon:
+        //     <img
+        //       src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+        //       alt="Weather Icon"
+        //     />
+        //   </div>
+
+        // </div>
+      
+      )}
+    </div>
+  );
+};
+export default Weather;
+{
+  /* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} transition={{duration:0.5 , delay:0.5}}>
             I have some content in here
           </motion.div>
           <AnimatePresence>
@@ -58,10 +75,5 @@ const Weather = ({ cityName }) => {
           </AnimatePresence>
 <motion.div whileHover={{height:"4em", width:"5em", backgroundColor:"wheat"}} style={{height:"2em", width:"2em", backgroundColor:"red"}}>
 hi
-</motion.div> */}
-        </div>
-      )}
-    </div>
-  );
-};
-export default Weather;
+</motion.div> */
+}

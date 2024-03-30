@@ -1,0 +1,22 @@
+.font-edit {
+    font-size: 5rem;
+    font-weight: 700;
+    background: -webkit-linear-gradient(right, #6392ad, #304b66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.temperature {
+    font-size: 7rem;
+
+}
+
+.icon {
+    width: 5rem;
+
+}
+.condition{
+    font-size: 2rem;
+    text-transform: capitalize;
+}

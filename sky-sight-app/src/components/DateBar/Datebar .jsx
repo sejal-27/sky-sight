@@ -12,7 +12,7 @@ const DateBar = () => {
 
     return () => clearInterval(timer);
   }, []);
-  return <div className="m-5 date-text w-1/2 flex justify-end">{currentDT.toLocaleString('en-US', { 
+  return <div className="date-text flex justify-end">{currentDT.toLocaleString('en-US', { 
     weekday: 'long', 
     year: 'numeric',
     month: 'long',

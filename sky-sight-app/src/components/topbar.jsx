@@ -13,11 +13,13 @@ const Topbar = () => {
 
   return (
     <>
-      <div className=" flex justify-between items-center m-5">
+    <div className="mt-10">
+      <div className="flex justify-between items-center m-5">
         <SearchBar onSearch={handleSearch} />
         <DateBar />
       </div>
       <Weather cityName={cityName} />
+      </div>
     </>
   );
 };
