@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DateBar from "./DateBar/Datebar ";
 import SearchBar from "./SearchBar/searchBar";
 import Weather from "./weather";
+import WeatherForecast from "./ForecastData/ForecastData";
 
 const Topbar = () => {
   const [cityName, setCityName] = useState("");
@@ -19,6 +20,7 @@ const Topbar = () => {
         <DateBar />
       </div>
       <Weather cityName={cityName} />
+      <WeatherForecast cityName={cityName}/>
       </div>
     </>
   );

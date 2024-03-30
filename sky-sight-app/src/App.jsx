@@ -1,6 +1,8 @@
 import React,{useState} from "react";
 // import Weather from "./components/weather";
 import Topbar from "./components/topbar";
+
+
 // import SearchBar from "./components/SearchBar/searchBar";
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
       */}
 
       <Topbar />
+      
     </>
   );
 };
