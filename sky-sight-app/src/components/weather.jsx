@@ -64,16 +64,16 @@ const Weather = ({ cityName }) => {
   );
 };
 export default Weather;
-{
-  /* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} transition={{duration:0.5 , delay:0.5}}>
-            I have some content in here
-          </motion.div>
-          <AnimatePresence>
-            <motion.div exit={{ x: "-100vh", opacity: 0 }}>
-              Watch me go woosh!
-            </motion.div>
-          </AnimatePresence>
-<motion.div whileHover={{height:"4em", width:"5em", backgroundColor:"wheat"}} style={{height:"2em", width:"2em", backgroundColor:"red"}}>
-hi
-</motion.div> */
-}
+// {
+//   /* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} transition={{duration:0.5 , delay:0.5}}>
+//             I have some content in here
+//           </motion.div>
+//           <AnimatePresence>
+//             <motion.div exit={{ x: "-100vh", opacity: 0 }}>
+//               Watch me go woosh!
+//             </motion.div>
+//           </AnimatePresence>
+// <motion.div whileHover={{height:"4em", width:"5em", backgroundColor:"wheat"}} style={{height:"2em", width:"2em", backgroundColor:"red"}}>
+// hi
+// </motion.div> */
+// }

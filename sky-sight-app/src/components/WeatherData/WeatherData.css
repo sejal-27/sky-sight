@@ -7,10 +7,20 @@
     text-transform: uppercase;
 }
 
-.temperature {
-    font-size: 7rem;
-
+/* Responsive font size adjustments */
+@media screen and (max-width: 768px) {
+    .font-edit {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
 }
+
+@media screen and (max-width: 576px) {
+    .font-edit {
+        font-size: 2rem; /* Further adjust font size for extra small screens */
+    }
+}
+
+
 
 .icon {
     width: 5rem;
