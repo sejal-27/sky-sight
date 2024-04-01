@@ -14,6 +14,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
+    <div className="">
     <form className="container" onSubmit={handleSubmit}>
       <input
         placeholder="Search..."
@@ -26,6 +27,7 @@ const SearchBar = ({ onSearch }) => {
         <i className="fa fa-search"></i>
       </button>
     </form>
+    </div>
   );
 };
 

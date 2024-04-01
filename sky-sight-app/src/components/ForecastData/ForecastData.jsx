@@ -41,26 +41,26 @@ const WeatherForecast = ({ cityName }) => {
   }, []);
   return (
     <>
-      <div class="relative flex flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
-        <div class="mx-auto px-4 w-full">
-          <h2 class="mb-4 font-bold text-xl text-gray-600">Weather in upcoming days:</h2>
-          <div class="grid w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div className="relative flex flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
+        <div className="mx-auto px-4 w-full">
+          <h2 className="mb-4 font-bold text-xl text-gray-600">Weather in upcoming days:</h2>
+          <div className="grid w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {filteredForecast.map((forecast, index) => (
               <div key={index}>
-                <div class="relative flex flex-col shadow-md rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
-                  <div class="h-auto overflow-hidden"></div>
-                  <div class="card-bg py-4 px-3">
-                    <h3 class="text-md mb-2 font-medium">
+                <div className="relative flex flex-col shadow-md rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <div className="h-auto overflow-hidden"></div>
+                  <div className="card-bg py-4 px-3">
+                    <h3 className="text-md mb-2 font-medium">
                       {forecast.dt_txt.split(" ")[0]}
                     </h3>
-                    <div class="flex  justify-between items-center">
-                      <p class="text-sm">{forecast.main.temp}</p>
-                      <p class="text-sm">{forecast.weather[0].description}</p>
-                      <div class="relative z-40 flex items-center gap-2">
+                    <div className="flex  justify-between items-center">
+                      <p className="text-sm">{forecast.main.temp}</p>
+                      <p className="text-sm">{forecast.weather[0].description}</p>
+                      <div className="relative z-40 flex items-center gap-2">
                         <img
-                          src={IMAGES.sampleImg}
+                          src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`}
                           alt=""
-                          className="h-5 w-5"
+                          className="h-8 w-8"
                         />
                       </div>
                     </div>
