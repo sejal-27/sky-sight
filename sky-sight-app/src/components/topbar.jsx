@@ -10,22 +10,31 @@ const Topbar = () => {
     setCityName(city);
     console.log(cityName, "646546");
   };
-
   useEffect(() => {
     if (!cityName) {
-      fetch(
-        "https://api.geoapify.com/v1/ipinfo?&apiKey=16590201230e496a9ed7eeb4677e9b7f"
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          const { city } = result;
-          setCityName(city.name);
-        })
-        .catch((error) => console.error("error fetching your location"));
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=2b2e87bfb47de09513bdee9d38f3009b`)
+              .then(response => response.json())
+              .then(data => {
+                const city = data.name;
+                setCityName(city);
+              })
+              .catch(error => console.error("Error fetching weather data:", error));
+          },
+          (error) => {
+            console.error("Error getting geolocation:", error);
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by this browser.");
+      }
     }
   }, [cityName]);
- 
-
+  console.log(cityName,"84928647823642");
   return (
     <>
       <div>
