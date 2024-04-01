@@ -3,9 +3,23 @@ import DateBar from "./DateBar/Datebar ";
 import SearchBar from "./SearchBar/searchBar";
 import Weather from "./weather";
 import WeatherForecast from "./ForecastData/ForecastData";
+import TempToggle from "./Toggle/TempToggle";
 
 const Topbar = () => {
   const [cityName, setCityName] = useState("");
+  const [unit, setUnit] = useState('metric'); 
+  const [dataKey, setDataKey] = useState(0);
+
+  
+ 
+  const handleUnitChange = (newUnit) => {
+    setUnit(newUnit);
+  };
+
+  useEffect(() => {
+    setDataKey((prevKey) => prevKey + 1);
+  }, [unit]);
+
   const handleSearch = (city) => {
     setCityName(city);
     console.log(cityName, "646546");
@@ -39,11 +53,13 @@ const Topbar = () => {
     <>
           <div className="  flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-between">
           <SearchBar onSearch={handleSearch} />
+          <TempToggle onChange={handleUnitChange} />
+
          <DateBar />
          </div>
         
-        <Weather cityName={cityName} />
-        <WeatherForecast cityName={cityName} />
+        <Weather cityName={cityName} unit={unit} key={dataKey}/>
+        <WeatherForecast cityName={cityName} unit={unit} key={dataKey}/>
   
     </>
   );

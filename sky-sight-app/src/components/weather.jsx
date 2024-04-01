@@ -3,7 +3,7 @@ import axios from "axios";
 import WeatherData from "./WeatherData/WeatherData";
 // import { motion, AnimatePresence } from "framer-motion";
 
-const Weather = ({ cityName }) => {
+const Weather = ({ cityName, unit }) => {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
   const apiKey = "2b2e87bfb47de09513bdee9d38f3009b";
@@ -15,7 +15,7 @@ const Weather = ({ cityName }) => {
         console.log(cityName, "11111");
         if (!cityName) return;
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`
         );
         setWeather(response.data);
         setError(null);
@@ -36,6 +36,7 @@ const Weather = ({ cityName }) => {
           temp={weather.main.temp}
           icon={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
           description={weather.weather[0].description}
+          unit={unit}
         />
   
         // <div className="">
