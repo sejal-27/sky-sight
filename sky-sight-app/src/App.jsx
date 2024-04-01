@@ -9,13 +9,9 @@ const App = () => {
   
   return (
     <>
-      {/* <Weather /> */}
-   
-      {/* <SearchBar />
-      */}
-
+    <div className="p-5">
       <Topbar />
-      
+      </div>      
     </>
   );
 };

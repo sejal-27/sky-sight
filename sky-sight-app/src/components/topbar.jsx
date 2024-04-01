@@ -37,14 +37,14 @@ const Topbar = () => {
   console.log(cityName,"84928647823642");
   return (
     <>
-      <div>
-        <div className="flex justify-between items-center m-5 mt-10">
+          <div className="  flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-between">
           <SearchBar onSearch={handleSearch} />
-          <DateBar />
-        </div>
+         <DateBar />
+         </div>
+        
         <Weather cityName={cityName} />
         <WeatherForecast cityName={cityName} />
-      </div>
+  
     </>
   );
 };

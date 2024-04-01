@@ -3,7 +3,7 @@ import "../../components/WeatherData/WeatherData.css";
 const WeatherData = ({ name, temp, icon, description }) => {
  
   return (
-    <div className="ml-5 w-full mt-34">
+    <div className="w-full mt-20">
       <div className="font-edit">{name}</div>{" "}
       
         <div className="temperature font-edit">{temp}°C</div>

@@ -42,15 +42,16 @@ const WeatherForecast = ({ cityName }) => {
   return (
     <>
       <div className="relative flex flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
-        <div className="mx-auto px-4 w-full">
-          <h2 className="mb-4 font-bold text-xl text-gray-600">Weather in upcoming days:</h2>
+        <div className="mx-auto w-full">
+          <h2 className=" pb-4 font-bold text-xl text-gray-600">Weather in upcoming days:</h2>
+          
           <div className="grid w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {filteredForecast.map((forecast, index) => (
               <div key={index}>
-                <div className="relative flex flex-col shadow-md rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                <div className="relative flex flex-col shadow-md rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <div className="h-auto overflow-hidden"></div>
                   <div className="card-bg py-4 px-3">
-                    <h3 className="text-md mb-2 font-medium">
+                    <h3 className="text-md pb-2 font-medium">
                       {forecast.dt_txt.split(" ")[0]}
                     </h3>
                     <div className="flex  justify-between items-center">
@@ -69,7 +70,8 @@ const WeatherForecast = ({ cityName }) => {
               </div>
             ))}
           </div>
-        </div>
+          </div>
+        
       </div>
     </>
   );
