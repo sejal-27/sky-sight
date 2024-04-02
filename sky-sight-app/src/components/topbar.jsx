@@ -7,11 +7,9 @@ import TempToggle from "./Toggle/TempToggle";
 
 const Topbar = () => {
   const [cityName, setCityName] = useState("");
-  const [unit, setUnit] = useState('metric'); 
+  const [unit, setUnit] = useState("metric");
   const [dataKey, setDataKey] = useState(0);
 
-  
- 
   const handleUnitChange = (newUnit) => {
     setUnit(newUnit);
   };
@@ -31,13 +29,17 @@ const Topbar = () => {
           (position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=2b2e87bfb47de09513bdee9d38f3009b`)
-              .then(response => response.json())
-              .then(data => {
+            fetch(
+              `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=2b2e87bfb47de09513bdee9d38f3009b`
+            )
+              .then((response) => response.json())
+              .then((data) => {
                 const city = data.name;
                 setCityName(city);
               })
-              .catch(error => console.error("Error fetching weather data:", error));
+              .catch((error) =>
+                console.error("Error fetching weather data:", error)
+              );
           },
           (error) => {
             console.error("Error getting geolocation:", error);
@@ -48,19 +50,19 @@ const Topbar = () => {
       }
     }
   }, [cityName]);
-  console.log(cityName,"84928647823642");
+  console.log(cityName, "84928647823642");
   return (
     <>
-          <div className="  flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-between">
-          <SearchBar onSearch={handleSearch} />
-          <TempToggle onChange={handleUnitChange} />
+      <div className="  flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-between">
+        <SearchBar onSearch={handleSearch} />
+       <div className="flex justify-center items-center">
+        <TempToggle onChange={handleUnitChange} />
+        <DateBar />
+        </div>
+      </div>
 
-         <DateBar />
-         </div>
-        
-        <Weather cityName={cityName} unit={unit} key={dataKey}/>
-        <WeatherForecast cityName={cityName} unit={unit} key={dataKey}/>
-  
+      <Weather cityName={cityName} unit={unit} />
+      <WeatherForecast cityName={cityName} unit={unit} key={dataKey} />
     </>
   );
 };
