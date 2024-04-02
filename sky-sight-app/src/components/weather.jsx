@@ -27,8 +27,7 @@ const Weather = ({ cityName, unit }) => {
     }
     fetchData();
   }, [cityName, apiKey, unit]);
-
-  // console.log(`Rendering Weather for ${cityName} with unit ${unit}`);
+  console.log(`Rendering Weather for ${cityName} with unit ${unit}`);
 
   return (
     <div>
@@ -40,6 +39,7 @@ const Weather = ({ cityName, unit }) => {
           icon={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
           description={weather.weather[0].description}
           unit={unit}
+          condition={weather.weather[0].main}
         />
       )}
     </div>
