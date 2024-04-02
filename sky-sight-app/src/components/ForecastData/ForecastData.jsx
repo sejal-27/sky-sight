@@ -3,22 +3,34 @@ import axios from "axios";
 import "../ForecastData/ForecastData.css";
 import { IMAGES } from "../../utils/constants";
 
-const WeatherForecast = ({ cityName }) => {
+const WeatherForecast = ({ cityName, unit }) => {
   const [forecastData, setForecastData] = useState(null);
+  const [error, setError] = useState(null);
   const apiKey = "2b2e87bfb47de09513bdee9d38f3009b";
+
   useEffect(() => {
+    if (!cityName) {
+      setForecastData(null);
+      setError(null);
+      return;
+    }
+
     const fetchForecastData = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${unit}`
         );
         setForecastData(response.data);
+        setError(null);
+        console.log("data was called", forecastData);
       } catch (error) {
         console.error("error fetching forecast request", error);
+        setError("Failed to fetch forecast data");
+        setForecastData(null);
       }
     };
     fetchForecastData();
-  }, [cityName, apiKey]);
+  }, [cityName, apiKey, unit]);
 
   if (!forecastData) {
     return <div className=""></div>;
@@ -39,12 +51,16 @@ const WeatherForecast = ({ cityName }) => {
     }
     return accumulator;
   }, []);
+
+  console.log(`Rendering WeatherForecast for ${cityName} with unit ${unit}`);
   return (
     <>
       <div className="relative flex flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
         <div className="mx-auto w-full">
-          <h2 className=" pb-4 font-bold text-xl text-gray-600">Weather in upcoming days:</h2>
-          
+          <h2 className=" pb-4 font-bold text-xl text-gray-600">
+            Weather in upcoming days:
+          </h2>
+
           <div className="grid w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {filteredForecast.map((forecast, index) => (
               <div key={index}>
@@ -55,8 +71,13 @@ const WeatherForecast = ({ cityName }) => {
                       {forecast.dt_txt.split(" ")[0]}
                     </h3>
                     <div className="flex  justify-between items-center">
-                      <p className="text-sm">{forecast.main.temp}</p>
-                      <p className="text-sm">{forecast.weather[0].description}</p>
+                      <p>
+                        Temperature: {forecast.main.temp}{" "}
+                        {unit === "metric" ? "°C" : "°F"}
+                      </p>
+                      <p className="text-sm">
+                        {forecast.weather[0].description}
+                      </p>
                       <div className="relative z-40 flex items-center gap-2">
                         <img
                           src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`}
@@ -70,8 +91,7 @@ const WeatherForecast = ({ cityName }) => {
               </div>
             ))}
           </div>
-          </div>
-        
+        </div>
       </div>
     </>
   );

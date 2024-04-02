@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="">
-    <form className="container" onSubmit={handleSubmit}>
+    <form className="flex w-full justify-center" onSubmit={handleSubmit}>
       <input
         placeholder="Search..."
         className="js-search"
