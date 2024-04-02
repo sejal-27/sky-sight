@@ -1,19 +1,10 @@
-
-.container {
-    width: 20rem;
-    padding: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
 .switches-container {
     width: 16rem;
     position: relative;
     display: flex;
     padding: 0;
     position: relative;
-    background: beige;
+    background: #f5f7f8;
     line-height: 3rem;
     border-radius: 3rem;
     margin-left: auto;
@@ -48,7 +39,7 @@
 
 .switch {
     border-radius: 3rem;
-    background: #a3b6bf;
+    background: #304b66;
     height: 100%;
 }
 

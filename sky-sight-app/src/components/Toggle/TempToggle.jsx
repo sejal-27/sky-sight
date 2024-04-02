@@ -11,16 +11,16 @@ const TempToggle = ({ onChange }) => {
   };
 
   return (
-    <div className="container">
+    <div className=" p-4">
       <div className="switches-container">
         <input type="radio" id="switchMetric" name="switchUnit" value="metric" checked={unit === 'metric'} onChange={handleToggle} />
         <input type="radio" id="switchImperial" name="switchUnit" value="imperial" checked={unit === 'imperial'} onChange={handleToggle} />
         <label htmlFor="switchMetric">Celcius</label>
-        <label htmlFor="switchImperial">Farenheit</label>
+        <label htmlFor="switchImperial">Fahrenheit</label>
         <div className="switch-wrapper">
           <div className="switch">
-            <div>{unit === 'metric' ? 'Celcius' : 'Farenheit'}</div>
-            <div>{unit ==='Imperial' ? 'Farenheit' : 'Farenheit'}</div>
+            <div>{unit === 'metric' ? 'Celcius' : 'Fahrenheit'}</div>
+            <div>{unit ==='Imperial' ? 'Celcius' : 'Fahrenheit'}</div>
           </div>
         </div>
       </div>
