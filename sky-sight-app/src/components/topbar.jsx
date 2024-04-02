@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar/searchBar";
 import Weather from "./weather";
 import WeatherForecast from "./ForecastData/ForecastData";
 import TempToggle from "./Toggle/TempToggle";
+import WeatherIcon, { DayIcons } from "../utils/WeatherIcons";
 
 const Topbar = () => {
   const [cityName, setCityName] = useState("");
@@ -51,6 +52,7 @@ const Topbar = () => {
     }
   }, [cityName]);
   console.log(cityName, "84928647823642");
+  const condition="Clear";
   return (
     <>
       <div className="  flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-between">
@@ -60,9 +62,10 @@ const Topbar = () => {
         <DateBar />
         </div>
       </div>
-
       <Weather cityName={cityName} unit={unit} />
       <WeatherForecast cityName={cityName} unit={unit} key={dataKey} />
+      
+      
     </>
   );
 };
