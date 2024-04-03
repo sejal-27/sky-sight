@@ -8,7 +8,7 @@
 }
 
 /* Responsive font size adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .font-edit {
         font-size: 3rem; /* Adjust font size for smaller screens */
     }
