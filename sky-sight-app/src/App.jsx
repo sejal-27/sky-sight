@@ -9,7 +9,7 @@ const App = () => {
   
   return (
     <>
-    <div className="p-5">
+    <div className="p-5 xl:p-10">
       <Topbar />
       </div>      
     </>

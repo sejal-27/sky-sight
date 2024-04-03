@@ -55,9 +55,9 @@ const Topbar = () => {
   const condition="Clear";
   return (
     <>
-      <div className="  flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-between">
+      <div className=" flex flex-col gap-2 sm:flex sm:flex-row sm:gap-0 sm:justify-between items-center">
         <SearchBar onSearch={handleSearch} />
-       <div className="flex-col gap-2 sm:flex sm:flex-row sm:gap-0 justify-center items-center">
+       <div className="flex-col gap-2 sm:flex sm:flex-row sm:gap-2 justify-center items-center">
         <TempToggle onChange={handleUnitChange} />
         <DateBar />
         </div>
