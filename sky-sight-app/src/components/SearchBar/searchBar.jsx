@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactDOM } from "react";
-import "../../components/SearchBar/searchBar.css"
+import "../../components/SearchBar/searchBar.css";
 
-const SearchBar=()=>{
-    return(
-        <div class="container m-5 w-1/2">
-  <input placeholder='Search...' class='js-search' type="text" />
-  <i class="fa fa-search"></i>
-</div>
-    );
+const SearchBar = ({ onSearch }) => {
+  const [cityName, setCityName] = useState("");
+  const handleChange = (e) => {
+    setCityName(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(cityName);
+  };
+
+  return (
+    <div className="">
+    <form className="flex w-full" onSubmit={handleSubmit}>
+      <input
+        placeholder="Search..."
+        className="js-search"
+        type="text"
+        value={cityName}
+        onChange={handleChange}
+      />
+      <button type="submit">
+        <i className="fa fa-search"></i>
+      </button>
+    </form>
+    </div>
+  );
 };
 
 export default SearchBar;

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: #a3b6bf;
+    width:100vw;
+    overflow-x: hidden;
 }

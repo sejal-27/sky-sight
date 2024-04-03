@@ -1,0 +1,32 @@
+.font-edit {
+    font-size: 5rem;
+    font-weight: 700;
+    background: -webkit-linear-gradient(right, #6392ad, #304b66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+/* Responsive font size adjustments */
+@media screen and (max-width: 1024px) {
+    .font-edit {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .font-edit {
+        font-size: 2rem; /* Further adjust font size for extra small screens */
+    }
+}
+
+
+
+.icon {
+    width: 5rem;
+
+}
+.condition{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
