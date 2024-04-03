@@ -5,11 +5,11 @@ const WeatherIcon = ({ condition }) => {
     Clear: "/DayIcons/sun.png",
     Clouds: "/DayIcons/clouds.png",
     Haze: "/DayIcons/fog.png",
-    Thunderstorm:"/DayIcons/storm.png",
-    Drizzle:"/DayIcons/drizzle.png",
-    Rain:"/DayIcons/heavy-rain.png",
-    Snow:"/DayIcons/snow.png",
-    Atmosphere:"/DayIcons/fog.png"
+    Thunderstorm: "/DayIcons/storm.png",
+    Drizzle: "/DayIcons/drizzle.png",
+    Rain: "/DayIcons/heavy-rain.png",
+    Snow: "/DayIcons/snow.png",
+    Atmosphere: "/DayIcons/fog.png",
   };
 
   const iconPath = weatherIcons[condition];
@@ -18,8 +18,8 @@ const WeatherIcon = ({ condition }) => {
     <img
       src={iconPath}
       alt={condition}
-      style={{ height: "150px", width: "150px" }}
-    />
+      style={{ width: "80%", height: "auto"}}
+          />
   );
 };
 

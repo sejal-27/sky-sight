@@ -11,7 +11,7 @@ const TempToggle = ({ onChange }) => {
   };
 
   return (
-    <div className=" p-4">
+    <div className="mt-4 sm:mt-0">
       <div className="switches-container">
         <input type="radio" id="switchMetric" name="switchUnit" value="metric" checked={unit === 'metric'} onChange={handleToggle} />
         <input type="radio" id="switchImperial" name="switchUnit" value="imperial" checked={unit === 'imperial'} onChange={handleToggle} />
