@@ -2,14 +2,14 @@ import React from "react";
 
 const WeatherIcon = ({ condition }) => {
   const weatherIcons = {
-    Clear: "/DayIcons/sun.png",
-    Clouds: "/DayIcons/clouds.png",
-    Haze: "/DayIcons/fog.png",
-    Thunderstorm: "/DayIcons/storm.png",
-    Drizzle: "/DayIcons/drizzle.png",
-    Rain: "/DayIcons/heavy-rain.png",
-    Snow: "/DayIcons/snow.png",
-    Atmosphere: "/DayIcons/fog.png",
+    Clear: "/DayIcons/sun.svg",
+    Clouds: "/DayIcons/cloudy.svg",
+    Haze: "/DayIcons/fog.svg",
+    Thunderstorm: "/DayIcons/storm.svg",
+    Drizzle: "/DayIcons/drizzle.svg",
+    Rain: "/DayIcons/heavy-rain.svg",
+    Snow: "/DayIcons/snow.svg",
+    Atmosphere: "/DayIcons/fog.svg",
   };
 
   const iconPath = weatherIcons[condition];
@@ -18,7 +18,7 @@ const WeatherIcon = ({ condition }) => {
     <img
       src={iconPath}
       alt={condition}
-      style={{ width: "80%", height: "auto"}}
+      style={{ width: "100%", height: "auto"}}
           />
   );
 };
