@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sky-sight/static/css/main.59be154c.css",
+    "main.js": "/sky-sight/static/js/main.92b474fb.js",
+    "static/media/fraction.cjs": "/sky-sight/static/media/fraction.7992481f3d8339b77604.cjs",
+    "index.html": "/sky-sight/index.html",
+    "static/media/index.cjs": "/sky-sight/static/media/index.cd351d7c31d0d3fccf96.cjs",
+    "main.59be154c.css.map": "/sky-sight/static/css/main.59be154c.css.map",
+    "main.92b474fb.js.map": "/sky-sight/static/js/main.92b474fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59be154c.css",
+    "static/js/main.92b474fb.js"
+  ]
+}
